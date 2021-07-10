@@ -15,7 +15,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @Configuration
 @EnableSwagger2
-public class MySwaggerUIExampleSwaggerConfig extends WebMvcConfigurationSupport {
+public class SwaggerConfig extends WebMvcConfigurationSupport {
 
   ApiInfo apiInfo() {
     return new ApiInfoBuilder()

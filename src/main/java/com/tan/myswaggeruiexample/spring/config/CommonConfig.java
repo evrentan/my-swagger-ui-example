@@ -11,5 +11,5 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @EnableMongoRepositories(value = "com.tan.myswaggeruiexample.repository")
 @EntityScan(value = "com.tan.myswaggeruiexample.entity")
 @EnableWebMvc
-public class MySwaggerUIExampleCommonConfig {
+public class CommonConfig {
 }

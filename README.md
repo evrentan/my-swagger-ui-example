@@ -21,6 +21,9 @@ Alternatively you can use the [Spring Boot Maven plugin](https://docs.spring.io/
 mvn spring-boot:run
 ```
 
+##Run Swagger UI Documentation
+After running the application, just type the  [local url for Swagger UI](http://localhost:8080/swagger-ui/index.html) in your browser.
+
 ## Copyright
 
 GNU General Public License v3.0
