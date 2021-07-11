@@ -33,7 +33,7 @@ public class CustomerController {
       @ApiResponse(code = 200, message = "Successfully Customer Created"),
       @ApiResponse(code = 500, message = "Internal Server Error")
   })
-  ResponseEntity<Customer> createCustomer(Customer customer) {
+  ResponseEntity<Customer> createCustomer(@RequestBody Customer customer) {
     return ResponseEntity.ok(this.customerService.createCustomer(customer));
   }
 
@@ -67,5 +67,41 @@ public class CustomerController {
       return ResponseEntity.ok(customer);
 
     return ResponseEntity.notFound().build();
+  }
+
+  @PatchMapping(value = "/{id}")
+  @ApiOperation(value = "Patch a Specific Customer Instance by ID")
+  @ApiResponses(value = {
+      @ApiResponse(code = 200, message = "Successfully Patch the Customer By ID"),
+      @ApiResponse(code = 400, message = "Bad Request for Patching the Customer"),
+      @ApiResponse(code = 404, message = "No Customer Found With ID"),
+      @ApiResponse(code = 500, message = "Internal Server Error")
+  })
+  ResponseEntity<Customer> patchCustomer(@PathVariable final String id, @RequestBody Customer customer) {
+    return this.customerService.updateCustomer(id, customer);
+  }
+
+  @PutMapping(value = "/{id}")
+  @ApiOperation(value = "Put a Specific Customer Instance by ID")
+  @ApiResponses(value = {
+      @ApiResponse(code = 200, message = "Successfully Put the Customer By ID"),
+      @ApiResponse(code = 400, message = "Bad Request for Putting the Customer"),
+      @ApiResponse(code = 404, message = "No Customer Found With ID"),
+      @ApiResponse(code = 500, message = "Internal Server Error")
+  })
+  ResponseEntity<Customer> putCustomer(@PathVariable final String id, @RequestBody Customer customer) {
+    return this.customerService.updateCustomer(id, customer);
+  }
+
+  @DeleteMapping(value = "/{id}")
+  @ApiOperation(value = "Put a Specific Customer Instance by ID")
+  @ApiResponses(value = {
+      @ApiResponse(code = 200, message = "Successfully Put the Customer By ID"),
+      @ApiResponse(code = 400, message = "Bad Request for Putting the Customer"),
+      @ApiResponse(code = 404, message = "No Customer Found With ID"),
+      @ApiResponse(code = 500, message = "Internal Server Error")
+  })
+  ResponseEntity<Customer> deleteCustomer(@PathVariable final String id) {
+    return this.customerService.deleteCustomer(id);
   }
 }

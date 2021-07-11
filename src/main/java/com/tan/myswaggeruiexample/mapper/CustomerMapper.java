@@ -29,7 +29,7 @@ public interface CustomerMapper {
 
   List<Customer> toDtoList(List<CustomerEntity> customerEntityList);
 
-  @BeanMapping(ignoreUnmappedSourceProperties = {"name", "passGrade"})
+  @BeanMapping(ignoreUnmappedSourceProperties = {"customerType", "fullName"})
   CustomerRef toDtoRef(CustomerEntity customerEntity);
 
   List<CustomerRef> toDtoRefList(List<CustomerEntity> customerEntityList);
