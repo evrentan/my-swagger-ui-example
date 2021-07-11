@@ -94,7 +94,7 @@ public class CustomerController {
   }
 
   @DeleteMapping(value = "/{id}")
-  @ApiOperation(value = "Put a Specific Customer Instance by ID")
+  @ApiOperation(value = "Delete a Specific Customer Instance by ID")
   @ApiResponses(value = {
       @ApiResponse(code = 200, message = "Successfully Put the Customer By ID"),
       @ApiResponse(code = 400, message = "Bad Request for Putting the Customer"),
